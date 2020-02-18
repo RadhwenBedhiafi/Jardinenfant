@@ -1,0 +1,257 @@
+{% extends 'base.html.twig' %}
+{%  block content %}
+<div class="container-fluid page-body-wrapper">
+    <!-- partial:../../partials/_sidebar.html -->
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+            <li class="nav-item nav-profile">
+                <a href="#" class="nav-link">
+                    <div class="nav-profile-image">
+                        <img src="../../assets/images/faces/face1.jpg" alt="profile">
+                        <span class="login-status online"></span>
+                        <!--change to offline or busy as needed-->
+                    </div>
+                    <div class="nav-profile-text d-flex flex-column">
+                        <span class="font-weight-bold mb-2">David Grey. H</span>
+                        <span class="text-secondary text-small">Project Manager</span>
+                    </div>
+                    <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../../index.html">
+                    <span class="menu-title">Dashboard</span>
+                    <i class="mdi mdi-home menu-icon"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                    <span class="menu-title">Basic UI Elements</span>
+                    <i class="menu-arrow"></i>
+                    <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                </a>
+                <div class="collapse" id="ui-basic">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../../pages/icons/mdi.html">
+                    <span class="menu-title">Icons</span>
+                    <i class="mdi mdi-contacts menu-icon"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../../pages/forms/basic_elements.html">
+                    <span class="menu-title">Forms</span>
+                    <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../../pages/charts/chartjs.html">
+                    <span class="menu-title">Charts</span>
+                    <i class="mdi mdi-chart-bar menu-icon"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../../pages/tables/basic-table.html">
+                    <span class="menu-title">Tables</span>
+                    <i class="mdi mdi-table-large menu-icon"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
+                    <span class="menu-title">Gestion des clubs</span>
+                    <i class="menu-arrow"></i>
+                    <i class="mdi mdi-medical-bag menu-icon"></i>
+                </a>
+                <div class="collapse" id="general-pages">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="{{path("backindex") }}"> liste des clubs </a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ path('consulterdem') }}"> liste des demandes d'adhesion </a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item sidebar-actions">
+              <span class="nav-link">
+                <div class="border-bottom">
+                  <h6 class="font-weight-normal mb-3">Projects</h6>
+                </div>
+                <button class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add a project</button>
+                <div class="mt-4">
+                  <div class="border-bottom">
+                    <p class="text-secondary">Categories</p>
+                  </div>
+                  <ul class="gradient-bullet-list mt-4">
+                    <li>Free</li>
+                    <li>Pro</li>
+                  </ul>
+                </div>
+              </span>
+            </li>
+        </ul>
+    </nav>
+    <!-- partial -->
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title"> Form elements </h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Forms</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Basic form elements</h4>
+                            <p class="card-description"> Basic form elements </p>
+                            <div class="form-group">
+                                {{ form_start(form) }}
+                                {{ form_widget(form.dureInsc) }}<br>
+                                <span class="genric-btn danger circle small" id="misscin">Error</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail3">Description</label>
+                                {{ form_widget(form.modePayment) }}<br>
+                                <span id="misspayment">Error hey</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword4">horraire</label>
+                                {{ form_widget(form.numParent) }}<br>
+                                <span id="missnum">number non valide</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword4">horraire</label>
+                                {{ form_widget(form.ancienClub) }}<br>
+                                <span id="missancien">error</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputCity1">Tarif</label>
+                                {{ form_widget(form.objectif) }}<br>
+                                <span id="missobj">error syntaxe</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputCity1">club desiré</label>
+                                {{ form_widget(form.clubId) }}
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputCity1">etat demande</label>
+                                {{ form_widget(form.etatDemande) }}
+                            </div>
+
+
+                            <a href="{{ path('consulterdem') }}"><input class="btn btn-gradient-primary mr-2" type="submit" value="Modifier"  ></a>
+                            {{ form_end(form) }}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+
+
+            $(document).ready(function () {
+                $('#misscin').hide();
+                $('#clubbundle_demandedad_dureInsc').keyup(function () {
+                    var re = /^[0-9 \t]{1,}$/i;
+                    var x = $('#clubbundle_demandedad_dureInsc').val();
+                    if (re.test(x)) {
+
+                        $('#btn').prop('disabled', false);
+                        $('#misscin').hide();
+
+
+                    } else {
+
+
+
+                        $('#misscin').show();
+
+
+
+                        $('#btn').prop('disabled', true);
+                    }
+
+                });
+            })
+
+
+
+            $(document).ready(function () {
+                $('#misspayment').hide();
+                $('#clubbundle_demandedad_modePayment').keyup(function () {
+
+
+
+                    var re = /^[a-z \t]{1,}$/i;
+                    var x = $('#clubbundle_demandedad_modePayment').val();
+                    if (re.test(x)) {
+                        $('#btn').prop('disabled', false);
+                        $('#misspayment').hide();
+                    } else {
+                        $('#misspayment').show();
+                        $('#btn').prop('disabled', true);
+                    }
+                });
+            })
+            $(document).ready(function () {
+                $('#missnum').hide();
+                $('#clubbundle_demandedad_numParent').keyup(function () {
+
+
+
+                    var re = /^[0-9 \t]{1,}$/i;
+                    var x = $('#clubbundle_demandedad_numParent').val();
+                    if (re.test(x)) {
+                        $('#btn').prop('disabled', false);
+                        $('#missnum').hide();
+                    } else {
+                        $('#missnum').show();
+                        $('#btn').prop('disabled', true);
+                    }
+                });
+            })
+            $(document).ready(function () {
+                $('#missancien').hide();
+                $('#clubbundle_demandedad_ancienClub').keyup(function () {
+
+
+
+                    var re = /^[a-z \t]{1,}$/i;
+                    var x = $('#clubbundle_demandedad_ancienClub').val();
+                    if (re.test(x)) {
+                        $('#btn').prop('disabled', false);
+                        $('#missancien').hide();
+                    } else {
+                        $('#missancien').show();
+                        $('#btn').prop('disabled', true);
+                    }
+                });
+            })
+            $(document).ready(function () {
+                $('#missobj').hide();
+                $('#clubbundle_demandedad_objectif').keyup(function () {
+
+
+
+                    var re = /^[a-z \t]{1,}$/i;
+                    var x = $('#clubbundle_demandedad_objectif').val();
+                    if (re.test(x)) {
+                        $('#btn').prop('disabled', false);
+                        $('#missobj').hide();
+                    } else {
+                        $('#missobj').show();
+                        $('#btn').prop('disabled', true);
+                    }
+                });
+            })
+        </script>
+        {% endblock %}
