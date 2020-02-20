@@ -1,0 +1,88 @@
+{% extends 'basefront.html.twig' %}
+{% block content %}
+
+    <!--================Home Banner Area =================-->
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="overlay" style="background: rgba(0, 35, 71, 0.31);"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="banner_content text-center">
+                            <h2>Modifier Article</h2>
+                            <div class="page_link">
+                                <a href="index.html">Home</a>
+                                <a href="contact.html">Blog</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Home Banner Area =================-->
+
+    <!--================Contact Area =================-->
+    <section class="contact_area section_gap">
+        <div class="container">
+
+
+            <div class="col-lg-9">
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        {{ form_start(form) }}
+                        <label>Contenu</label>
+                        {{ form_widget(form.contenu) }}
+                        <span class="genric-btn danger circle small" id="misscon">Error</span>
+                        <br>
+
+                        <div class="col-md-12 text-right">
+
+                            <a href="{{ path('consulter')  }}" ><input id="btn" class="btn primary-btn" type="submit" value="Modifier"   onclick="notifyMe()"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    {{ form_end(form) }}
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--================Contact Area =================-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+$(document).ready(function () {
+$('#misscon').hide();
+$('#forumbundle_commentaire_contenu').keyup(function () {
+var re = /^^.{1,}$/i;
+var x = $('#forumbundle_commentaire_contenu').val();
+if (re.test(x)) {
+
+$('#btn').prop('disabled', false);
+$('#misscon').hide();
+
+
+} else {
+
+
+
+$('#misscon').show();
+
+
+
+$('#btn').prop('disabled', true);
+}
+
+});
+})
+</script>
+{% endblock %}
+
+
+
+
+

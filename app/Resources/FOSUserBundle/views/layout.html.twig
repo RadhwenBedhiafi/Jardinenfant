@@ -1,0 +1,36 @@
+{% extends 'basefront.html.twig' %}
+{% block content %}
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="overlay" style="background: rgba(0, 35, 71, 0.31);"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="banner_content text-center">
+                            <h2>Register</h2>
+                            <div class="page_link">
+                                <a href="index.html">Home</a>
+                                <a href="contact.html">Register</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact_area section_gap">
+    <div class="container">
+
+
+    <div class="col-lg-9">
+
+    <div class="col-md-6">
+
+    <div class="form-group">
+    {% block fos_user_content %} {% endblock %}
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+{% endblock %}

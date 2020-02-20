@@ -1,0 +1,28 @@
+<li class="breadcrumb-item">
+    <h6 align="center" size=""><font size="60px" color="#ff7f50" class="text-center text-ff7f50-opacity-05"><b>Ajouter Commentaire</b></font></h6>
+</li>
+
+
+
+{{ form_start(form) }}
+
+<label class="text-black" for="fname">Contenu:</label>
+{{ form_widget(form.contenu, {'attr': {'class': 'form-control','placeholder':'contenu'} }) }}</br>
+
+
+<label>Article Id:</label>
+{{ form_widget(form.idArticle, {'attr': {'class': 'form-control','placeholder':'id Article'} }) }}</br>
+
+
+
+
+
+
+
+<input type="submit" value="Ajouter" class="btn btn-primary py-2 px-4 text-white">
+
+
+
+
+{{ form_end(form) }}
+
