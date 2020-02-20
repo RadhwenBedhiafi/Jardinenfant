@@ -1,0 +1,25 @@
+{% extends 'base_backend.html.twig' %}
+
+{% block main %}
+    <h1>event edit</h1>
+
+    {% form_theme edit_form 'bootstrap_4_horizontal_layout.html.twig' %}
+
+    {{ form_start(edit_form) }}
+    {{ form_widget(edit_form) }}
+    <input class="btn-gradient-success" type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a class="btn-gradient-info" href="{{ path('event_homepage') }}">Back to the list</a>
+        </li>
+        <li>
+            {% form_theme delete_form 'bootstrap_4_horizontal_layout.html.twig' %}
+
+            {{ form_start(delete_form) }}
+            <input class="btn-gradient-danger" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

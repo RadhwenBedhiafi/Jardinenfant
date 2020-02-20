@@ -1,0 +1,24 @@
+planevent_index:
+    path:     /
+    defaults: { _controller: "eventBundle:PlanEvent:index" }
+    methods:  GET
+
+planevent_show:
+    path:     /{id}/show
+    defaults: { _controller: "eventBundle:PlanEvent:show" }
+    methods:  GET
+
+planevent_new:
+    path:     /new
+    defaults: { _controller: "eventBundle:PlanEvent:new" }
+    methods:  [GET, POST]
+
+planevent_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "eventBundle:PlanEvent:edit" }
+    methods:  [GET, POST]
+
+planevent_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "eventBundle:PlanEvent:delete" }
+    methods:  DELETE
