@@ -1,0 +1,44 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block body %}
+
+    <link rel="stylesheet" type="text/css" href="{{ asset ('styles/events.css')}}">
+    <table border="1" style="border: #4e555b" align="center" class="responstable">
+        <tr>
+            <th bgcolor="#deb887" height="2" style="border-bottom: #1c7430" align="center"> Nom Plat </th>
+            <th bgcolor="#deb887" align="center" > Date  </th>
+            <th bgcolor="#deb887" align="center" > Image </th>
+
+
+
+        </tr>
+
+
+        {% for plat in plats%}
+        <tr>
+            <td align="center"> {{ plat.nomPlat}} </td>
+            <td align="center"> {{ plat.date|date('Y-m-d') }} </td>
+
+
+            <td align="center"> <img src="{{ asset('uploads/images/products/'~plat.photoPlat) }} " > </td>
+
+
+            <td> <a href="{{ path('sup_back', {'id':plat.id}) }}  "   onclick="return confirm('are u sure?')" class="btn btn-danger">
+                    supprimer </a> </br> </td>
+               <td> <a href="{{ path('modifier', {'id':plat.id}) }}  "   onclick="return confirm('voulez vous modifier le contenu du plat')" class="btn btn-danger">
+                    modifier
+                </a>
+            </td>
+            {% endfor %}
+
+
+    </table></center>
+    <div class="navigation">
+        {{ knp_pagination_render(plats) }}
+    </div>
+    <br>
+    <center>
+        <a href="{{ path('new') }}">
+            <button class="btn btn-success" style="width: 300px;height: 50px">ajouter</button>
+        </a></center>
+{% endblock %}

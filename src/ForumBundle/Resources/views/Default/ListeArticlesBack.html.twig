@@ -1,0 +1,113 @@
+{% extends 'baseBack.html.twig' %}
+{% block body %}
+
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-lg-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <input id="myInput" onkeyup="myFunction()" title="type in a name" placeholder="Search">
+                                <h4 class="card-title">Liste Des Articles</h4>
+                                <table class="table table-bordered" id="myTable">
+                                    <thead>
+                                    <tr>
+                                        <td> Titre </td>
+                                        <td> Image </td>
+                                        <td> Date de saisie </td>
+                                        <td> Description </td>
+                                        <td> Action </td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for i in A %}
+
+                                        <td >{{ i.titre }}</td>
+                                        <td><img src="{{ asset('front/img/blog/main-blog/' ~ i.image)  }}"></td>
+                                        <td>{{ i.dateSaisie|date('Y-m-d') }}</td>
+                                    <td style="word-break: break-all;">{{ i.description }}</td>
+                                    <td> <a href="{{ path('delete',{'id':i.id}) }}" OnClick="return confirm('Voulez vous vraiment supprimer cet article ?');">Supprimer</a></td>
+
+
+                                    </tbody>
+                                    {% endfor %}
+                                    <tr>
+                                        <a href="{{ path("imprimer") }}" class="btn-primary btn">Imprimer PDF</a>
+
+                                    </tr>
+
+                                </table>
+                                <br><br>
+                                <div class="navigation">
+                                    {{ knp_pagination_render(A) }}
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 grid-margin stretch-card">
+
+                    </div>
+                    <div class="col-lg-12 grid-margin stretch-card">
+
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <div class="col-lg-12 stretch-card">
+
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+            <script>
+
+                function myFunction() {
+
+                    var input, filter, table, tr, td, i, txtValue;
+
+                    input = document.getElementById("myInput");
+
+                    filter = input.value.toUpperCase();
+
+                    table = document.getElementById("myTable");
+
+                    tr = table.getElementsByTagName("tr");
+
+                    for (i = 0; i < tr.length; i++) {
+
+                        td = tr[i].getElementsByTagName("td")[0];
+
+                        if (td) {
+
+                            txtValue = td.textContent || td.innerText;
+
+                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+
+                                tr[i].style.display = "";
+
+                            } else {
+
+                                tr[i].style.display = "none";
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            </script>
+
+{% endblock %}

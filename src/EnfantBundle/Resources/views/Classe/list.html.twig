@@ -1,0 +1,50 @@
+{% extends 'baseBack.html.twig' %}
+{% block body %}
+
+    <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Liste des classes</h4>
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Identifiant</th>
+                        <th>Bloc</th>
+                        <th>Libelle</th>
+                        <th>Taille Maximal</th>
+                        <th>Supprimer </th>
+                        <th>Modifier</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for classe in classes %}
+                    <tr>
+
+                        <td>{{ classe.id }}</td>
+
+                        <td>{{ classe.bloc }}</td>
+                        <td>{{ classe.libelle }}</td>
+                        <td>{{ classe.effectif }}</td>
+                        <td>
+                            <a href="{{ path("classe_delete",{'id':classe.id}) }}" class="mdi mdi-delete"> </a>
+                        </td>
+                        <td>
+                            <a href="{{ path("classe_update",{'id':classe.id}) }}" class="mdi mdi-autorenew"></a>
+                        </td>
+
+
+
+                    {% endfor %}
+                    <tr>
+                        <a href="{{ path("classe_recherche") }}" class="btn-primary btn">Rechercher</a>
+
+                    </tr>
+                    </tr>
+                    <tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'baseBack.html.twig' %}
+{% block css %}
+
+    <link rel="stylesheet" href="{{ asset('dashboard/assets/vendors/mdi/css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/assets/vendors/css/vendor.bundle.base.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/assets/css/style.css') }}">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="{{ asset('dashboard/assets/images/favicon.png') }}" />
+{% endblock %}
+{% block body%}
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Affecter L'enfant en une classe</h4>
+
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

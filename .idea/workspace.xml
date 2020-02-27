@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="33d0d956-94bd-4a93-bf48-9946a2647e25" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <phar pharPath="$PROJECT_DIR$/composer.phar" interpreterId="8dac0876-3ef5-4456-a9b8-84b4c035e189" />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-cache-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/vendor/sensio/generator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/sensio/distribution-bundle" />
+      <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/vendor/fig/link-util" />
+      <path value="$PROJECT_DIR$/vendor/symfony/symfony" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-apcu" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/vendor/jdorn/sql-formatter" />
+      <path value="$PROJECT_DIR$/vendor/incenteev/composer-parameter-handler" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/sensiolabs/security-checker" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
+      <path value="$PROJECT_DIR$/vendor/gregwar/captcha" />
+      <path value="$PROJECT_DIR$/vendor/gregwar/captcha-bundle" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/easycorp/easyadmin-bundle" />
+      <path value="$PROJECT_DIR$/vendor/pagerfanta/pagerfanta" />
+      <path value="$PROJECT_DIR$/vendor/pusher/pusher-php-server" />
+      <path value="$PROJECT_DIR$/vendor/willdurand/jsonp-callback-validator" />
+      <path value="$PROJECT_DIR$/vendor/mgilet/notification-bundle" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/sodium_compat" />
+      <path value="$PROJECT_DIR$/vendor/mrad/notifications-bundle" />
+      <path value="$PROJECT_DIR$/vendor/twig/extensions" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/jsrouting-bundle" />
+      <path value="$PROJECT_DIR$/vendor/ancarebeca/full-calendar-bundle" />
+      <path value="$PROJECT_DIR$/vendor/cmen/google-charts-bundle" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy-bundle" />
+      <path value="$PROJECT_DIR$/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/adesigns/calendar-bundle" />
+      <path value="$PROJECT_DIR$/vendor/blackknight467/star-rating-bundle" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1XXob6O9sTaSdwlyiiOiWDzek8O" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\ELITE\web" />
+      <recent name="C:\wamp64\www\ELITE\app\Resources" />
+      <recent name="C:\wamp64\www\ELITE\app\Resources\views" />
+      <recent name="C:\wamp64\www\ELITE\src" />
+      <recent name="C:\wamp64\www\ELITE\app\Resources\FOSMessageBundle" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\ELITE\app\Resources\views" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="s doctrine:database:create" />
+      <command value="s fos:user:promote abderrahim ROLE_ADMIN" />
+      <command value="run" />
+      <command value="s generate:bundle" />
+      <command value="s doctrine:generate:entity" />
+      <command value="s doctrine:generate:form" />
+      <command value="s doctrine:generate:form ligneTransport" />
+      <command value="s doctrine:generate:entity AppBundle:Notification" />
+      <command value="s doctrine:generate:entity transportBundle:Notification" />
+      <command value="require cmen/google-charts-bundle" />
+      <command value="s doctrine:generate:entity  AppBundle:Message" />
+      <command value="s doctrine:generate:entity  AppBundle:Thread" />
+      <command value="s doctrine:generate:entity  AppBundle:ThreadMetaData" />
+      <command value="s doctrine:generate:entity  AppBundle:MessageMetadata" />
+      <command value="s doctrine:generate:entity  AppBundle:Notification" />
+      <command value="s doctrine:generate:entity  transportBundle:Notification" />
+      <command value="s generate:controller" />
+      <command value="s sever:run" />
+      <command value="server:run" />
+      <command value="c dump-autoload" />
+      <command value="s server:run" />
+      <command value="s doctrine:schema:update --force" />
+      <command value="s cache:clear" />
+      <command value="s debug:router" />
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="33d0d956-94bd-4a93-bf48-9946a2647e25" name="Default Changelist" comment="" />
+      <created>1581201868073</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581201868073</updated>
+      <workItem from="1581201870654" duration="16149000" />
+      <workItem from="1581324142616" duration="217000" />
+      <workItem from="1581332278902" duration="1930000" />
+      <workItem from="1581341921671" duration="113000" />
+      <workItem from="1581448907469" duration="4138000" />
+      <workItem from="1581455311842" duration="11494000" />
+      <workItem from="1581473935397" duration="2632000" />
+      <workItem from="1581515221885" duration="1751000" />
+      <workItem from="1581526981287" duration="5592000" />
+      <workItem from="1581533501731" duration="18952000" />
+      <workItem from="1581556740048" duration="14330000" />
+      <workItem from="1581582425043" duration="8356000" />
+      <workItem from="1581678383344" duration="362000" />
+      <workItem from="1581710979807" duration="863000" />
+      <workItem from="1581716627181" duration="750000" />
+      <workItem from="1581722999475" duration="7212000" />
+      <workItem from="1581881258865" duration="15600000" />
+      <workItem from="1581898840575" duration="18695000" />
+      <workItem from="1581961650085" duration="2370000" />
+      <workItem from="1581974146405" duration="6127000" />
+      <workItem from="1581980858714" duration="6667000" />
+      <workItem from="1582029743859" duration="19533000" />
+      <workItem from="1582060319476" duration="8646000" />
+      <workItem from="1582130866816" duration="1149000" />
+      <workItem from="1582133624210" duration="21595000" />
+      <workItem from="1582162236921" duration="9848000" />
+      <workItem from="1582173241427" duration="10366000" />
+      <workItem from="1582186508930" duration="4779000" />
+      <workItem from="1582298110581" duration="1034000" />
+      <workItem from="1582326818532" duration="20611000" />
+      <workItem from="1582382229262" duration="23495000" />
+      <workItem from="1582415480591" duration="2696000" />
+      <workItem from="1582418434156" duration="6435000" />
+      <workItem from="1582469914048" duration="5665000" />
+      <workItem from="1582482654306" duration="9626000" />
+      <workItem from="1582495821476" duration="2852000" />
+      <workItem from="1582501079920" duration="21901000" />
+      <workItem from="1582566241915" duration="27585000" />
+      <workItem from="1582598307556" duration="12331000" />
+      <workItem from="1582642787209" duration="543000" />
+      <workItem from="1582658642258" duration="1298000" />
+      <workItem from="1582673870718" duration="12242000" />
+      <workItem from="1582735789075" duration="4314000" />
+      <workItem from="1582741777020" duration="20582000" />
+      <workItem from="1582763072392" duration="1868000" />
+      <workItem from="1582765040711" duration="3823000" />
+      <workItem from="1582769094789" duration="2094000" />
+      <workItem from="1582771250414" duration="15187000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/transportBundle/Controller/ligneTransportController.php</url>
+          <line>343</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

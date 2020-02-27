@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css" media="print">
+        .no-print { display: none; }
+    </style>
+<link rel="stylesheet" type="text/css" href="{{ asset ('styles/events.css')}}">
+<table border="1" style="border: #4e555b" align="center" class="responstable" id="evttt">
+    <tr>
+        <th bgcolor="#deb887" height="2" style="border-bottom: #1c7430" align="center"> Titre Evenement </th>
+        <th bgcolor="#deb887" align="center" > Date Debut </th>
+        <th bgcolor="#deb887" align="center" > Date  Fin </th>
+        <th bgcolor="#deb887" align="center" > Image Event </th>
+
+
+
+    </tr>
+
+
+    {% for reserv in res %}
+
+        {{ reserv.photoPlat }}
+        <tr class="no-print" >
+        <td align="center" id="abc" class="report_left_inner" > {{ reserv.nomPlat  }} </td>
+        <td align="center"> {{ reserv.date|date("m/d/Y") }} </td>
+
+            <td align="center"> <img src="{{ asset('../public/uploads/'~reserv.photoPlat ) }}  " alt="images" width="100" height="90" > </td>
+          <td>   <br> <a href="{{ path('supt', {'id':reserv.id } ) }}" onclick="return confirm('are u sure ?')" >
+                  <button class="btn btn-danger">  supprimer </button>  </a> </br> </td>
+
+               <td> <a href="{{ path('tiket', {'id':reserv.id }) }}"  >
+                    <button class="btn btn-primary">Telecharger </button></a>
+            </td>
+    </tr>
+
+
+    {% endfor %}
+
+</table>
+{% endblock %}

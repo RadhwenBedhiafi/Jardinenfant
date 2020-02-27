@@ -1,0 +1,105 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block body %}
+    <h1>Lignetransport</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ ligneTransport.id }}</td>
+            </tr>
+            <tr>
+                <th>Heuredepart</th>
+                <td>{% if ligneTransport.heureDepart %}{{ ligneTransport.heureDepart|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Station</th>
+                <td>{{ ligneTransport.station }}</td>
+            </tr>
+            <tr>
+                <th>Vehicule</th>
+                <td>{{ ligneTransport.vehicule }}</td>
+            </tr>
+            <tr>
+                <th>Tarif</th>
+                <td>{{ ligneTransport.tarif }}</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('lignetransport_indexback') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('lignetransport_edit', { 'id': ligneTransport.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+
+
+
+    <h1>Liste des demandes</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>nom demandeur</th>
+            <th>prenom demandeur</th>
+
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for user in users %}
+            <tr>
+{#                <td><a href="{{ path('lignetransport_show', { 'id': ligneTransport.id }) }}">{{ ligneTransport.id }}</a></td>#}
+{#                <td>{% if ligneTransport.heureDepart %}{{ ligneTransport.heureDepart|date('Y-m-d H:i:s') }}{% endif %}</td>#}
+                <td>{{ user.nom }}</td>
+                <td>{{ user.prenom }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            {% if user.valid == 0 %}
+                                {% if ligneTransport.nbPlaces <  ligneTransport.capacite  %}
+                                    <a href="{{ path('accepter_demande', { 'id': user.id }) }}">accepter</a>
+                                {% else %}
+                                    <a>saturée</a>
+                                {% endif %}
+                            {% endif %}
+
+                        </li>
+
+                        <li>
+                            {% if user.valid == 1 %}
+                                <a href="{{ path('refuser_demande', { 'id': user.id }) }}" onclick="return confirm('are u sure?')">refuser</a>
+
+{#                                <a href="{{ path('refuser_demande', { 'id': user.id }) }}">refuser</a>#}
+                            {% endif %}
+                        </li>
+                        <li>
+                            <a href="{{ path('fos_message') }}" >envoyer un message</a>
+
+                        </li>
+
+
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    </tbody>
+
+    <ul>
+        <li>
+            <a href="{{ path('lignetransport_new') }}">Create a new ligneTransport</a>
+        </li>
+    </ul>
+{% endblock %}

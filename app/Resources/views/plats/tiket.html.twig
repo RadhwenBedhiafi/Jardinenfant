@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event Card</title>
+    <link href="{{ asset('https://fonts.googleapis.com/icon?family=Material+Icons') }}"
+          rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{{ asset('css/style.css')}}">
+    <style type="text/css" media="print">
+        .no-print { display: none; }
+    </style>
+
+</head>
+
+<body>
+
+<div class="event_container">
+    <div class="event_bg"> <img src="{{ asset('../public/uploads/'~tiket.photoPlat) }}" width="300" height="230" ></div>
+    <div class="event_info">
+        <div class="event_title">
+            <h4> {{ tiket.nomPlat}}  </h4>
+        </div>
+        <div class="event_desc">
+
+        </div>
+        <div class="event_footer">
+            <div class="event_date">
+                <p> Date : {{ tiket.date|date("m/d/Y")   }}</p>
+
+            </div>
+            <div class="no-print">
+            <div class="event_more ">
+                <a href="javascript:window.print()" class="btn_more">
+                    Imprimer
+                </a>
+            </div></div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+

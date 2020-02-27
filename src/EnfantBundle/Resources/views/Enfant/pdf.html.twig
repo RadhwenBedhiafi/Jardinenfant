@@ -1,0 +1,32 @@
+<h1>{{ title }}</h1>
+<table border ="4">
+    <thead>
+    <tr>
+        <th>Identifiant</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Sexe</th>
+        <th>Nationalite </th>
+        <th>Age</th>
+        <th>Status Medical</th>
+        <th>Classe</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for enfant in enfants %}
+    <tr>
+
+        <td>{{ enfant.id }}</td>
+
+        <td>{{ enfant.nom }}</td>
+        <td>{{ enfant.prenom }}</td>
+        <td>{{ enfant.sexe }}</td>
+        <td>{{ enfant.nationalite }}</td>
+        <td>{{ enfant.age }}</td>
+        <td>{{ enfant.smedical }}</td>
+        <td>{{ enfant.classe.libelle|default('') }}</td>
+        {% endfor %}
+    </tr>
+    </tbody>
+</table>

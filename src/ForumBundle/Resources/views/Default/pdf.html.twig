@@ -1,0 +1,20 @@
+<table border="4">
+    <thead>
+    <tr>
+        <td> Titre </td>
+        <td> Date de saisie </td>
+        <td> Description </td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in articles %}
+
+    <td >{{ i.titre }}</td>
+    <td>{{ i.dateSaisie|date('Y-m-d') }}</td>
+    <td style="word-break: break-all;">{{ i.description }}</td>
+
+
+    </tbody>
+    {% endfor %}
+
+</table>

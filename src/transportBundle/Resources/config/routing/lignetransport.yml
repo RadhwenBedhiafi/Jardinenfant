@@ -1,0 +1,47 @@
+
+lignetransport_show:
+    path:     /{id}/show
+    defaults: { _controller: "transportBundle:ligneTransport:show" }
+    methods:  GET
+
+lignetransport_new:
+    path:     /back/ligneTransport/new
+    defaults: { _controller: "transportBundle:ligneTransport:new" }
+    methods:  [GET, POST]
+
+lignetransport_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "transportBundle:ligneTransport:edit" }
+    methods:  [GET, POST]
+
+lignetransport_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "transportBundle:ligneTransport:delete" }
+    methods:  DELETE
+lignetransport_indexf:
+    path:     /
+    defaults: { _controller: "transportBundle:ligneTransport:indexf" }
+    methods:  GET
+lignetransport_showf:
+    path:     /{id}/showf
+    defaults: { _controller: "transportBundle:ligneTransport:showf" }
+    methods:  GET
+traiter_demande:
+    path:     /traiterdemande
+    defaults: { _controller: "transportBundle:ligneTransport:traiterdemande" }
+    methods:  [GET]
+accepter_demande:
+    path:     /{id}/accepterdemande
+    defaults: { _controller: "transportBundle:ligneTransport:accepterdemande" }
+    methods:  [GET]
+refuser_demande:
+    path:     /{id}/refuserdemande
+    defaults: { _controller: "transportBundle:ligneTransport:refuserdemande" }
+    methods:  [GET]
+demanderLigne:
+    path:     /{id}/demanderLigne
+    defaults: { _controller: "transportBundle:ligneTransport:demanderLigne" }
+    methods:  GET
+
+
+

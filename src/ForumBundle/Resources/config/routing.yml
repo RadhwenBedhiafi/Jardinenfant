@@ -1,0 +1,56 @@
+forum_homepage:
+    path:     /
+    defaults: { _controller: ForumBundle:Default:indexF }
+
+indexF:
+    path:     /f
+    defaults: { _controller: ForumBundle:Default:index }
+
+consulter:
+    path:     /a
+    defaults: { _controller: ForumBundle:Default:consulter }
+
+detailss:
+    path:     /detailss/{id}
+    defaults: { _controller: ForumBundle:Default:detailss }
+
+listeab:
+    path:     /ab
+    defaults: { _controller: ForumBundle:Default:listeab }
+
+delete:
+    path:     /ab/{id}
+    defaults: { _controller: ForumBundle:Default:delete }
+
+modifier:
+    path:     /modifier/{id}
+    defaults: { _controller: ForumBundle:Default:modifier }
+
+ajouter:
+    path:     /add
+    defaults: { _controller: ForumBundle:Default:add }
+
+ajouterC:
+    path:     /details
+    defaults: { _controller: ForumBundle:Default:addC }
+
+deleteC:
+    path:     /c/{id}
+    defaults: { _controller: ForumBundle:Default:deleteC }
+
+modifierC:
+    path:     /modifierC/{id}
+    defaults: { _controller: ForumBundle:Default:modifierC }
+sendMail:
+    path:     /mail
+    defaults: { _controller: ForumBundle:Mail:sendMail }
+statique:
+    path:     /statnajiba
+    defaults: { _controller: ForumBundle:Default:Stat }
+imprimer:
+    path:     /imprimer
+    defaults: { _controller: ForumBundle:Default:pdf }
+
+
+
+

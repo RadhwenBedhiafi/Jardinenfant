@@ -1,0 +1,43 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block body %}
+    <h1>Planevents list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date_debut</th>
+                <th>Date_fin</th>
+                <th>Titre</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for planEvent in planEvents %}
+            <tr>
+                <td><a href="{{ path('planevent_show', { 'id': planEvent.id }) }}">{{ planEvent.id }}</a></td>
+                <td>{% if planEvent.datedebut %}{{ planEvent.datedebut|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if planEvent.datefin %}{{ planEvent.datefin|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ planEvent.titre }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('planevent_show', { 'id': planEvent.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('planevent_edit', { 'id': planEvent.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('planevent_new') }}">Create a new planEvent</a>
+        </li>
+    </ul>
+{% endblock %}

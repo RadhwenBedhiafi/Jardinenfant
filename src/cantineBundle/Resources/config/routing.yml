@@ -1,0 +1,35 @@
+cantine_homepage:
+    path:     /c
+    defaults: { _controller: cantineBundle:Default:index }
+show:
+    path:     /showplat
+    defaults: { _controller: cantineBundle:plats:index }
+chercher:
+    path:     /chercher
+    defaults: { _controller: cantineBundle:plats:chercher }
+
+modifier:
+    path:     /modifier/{id}
+    defaults: { _controller: cantineBundle:plats:modifier }
+
+show_back:
+    path:     /show_back
+    defaults: { _controller: cantineBundle:plats:showback }
+sup_back:
+    path:     /sup_back/{id}
+    defaults: { _controller: cantineBundle:plats:sup }
+supt:
+    path:     /supt/{id}
+    defaults: { _controller: cantineBundle:plats:supt }
+new:
+    path:     /new
+    defaults: { _controller: cantineBundle:plats:add }
+plats_edit:
+    path:     /plats_edit/{id}
+    defaults: { _controller: cantineBundle:plats:update }
+res:
+    path:     /reserv/{id}
+    defaults: { _controller: cantineBundle:plats:res}
+tiket:
+    path:     /tiket/{id}
+    defaults: { _controller: cantineBundle:plats:tiket }

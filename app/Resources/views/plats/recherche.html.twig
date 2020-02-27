@@ -1,0 +1,48 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block body %}
+    <h1>Plats list</h1>
+    <form method="POST">
+        Identifiant <input type="integer" name="id">
+        <input type="submit" name="submit" value="recherche" class="btn-primary btn">
+
+    </form>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nomplat</th>
+            <th>Photoplat</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for plat in plats %}
+            <tr>
+                <td><a href="{{ path('plats_show', { 'id': plat.id }) }}">{{ plat.id }}</a></td>
+                <td>{{ plat.nomPlat }}</td>
+                <td>{{ plat.photoPlat }}</td>
+                <td>{% if plat.date %}{{ plat.date|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('plats_show', { 'id': plat.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('plats_edit', { 'id': plat.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('plats_new') }}">Create a new plat</a>
+        </li>
+    </ul>
+{% endblock %}

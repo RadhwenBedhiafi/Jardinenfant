@@ -1,0 +1,17 @@
+transport_chauffeur:
+    resource: "@transportBundle/Resources/config/routing/chauffeur.yml"
+    prefix:   /back/chauffeur
+transport_homepage:
+    path:     /
+    defaults: { _controller: transportBundle:Default:index }
+transport_ligneTransport:
+    resource: "@transportBundle/Resources/config/routing/ligneTransport.yml"
+    prefix:   /front/ligneTransport
+lignetransport_indexback:
+    path:     /back/ligneTransport
+    defaults: { _controller: "transportBundle:ligneTransport:indexback" }
+    methods:  GET
+lignetransportDemande_indexback:
+    path:     /back/ligneTransportGererDemande
+    defaults: { _controller: "transportBundle:ligneTransport:gererDemande" }
+    methods:  GET

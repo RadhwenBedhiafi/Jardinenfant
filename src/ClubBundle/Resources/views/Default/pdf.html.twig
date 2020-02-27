@@ -1,0 +1,27 @@
+<h1>{{ title }}</h1>
+<table border ="4">
+    <thead>
+    <tr>
+        <th>duree d'inscription</th>
+        <th>mode de payment</th>
+        <th>etat demande</th>
+        <th>num parent</th>
+        <th>ancien club</th>
+        <th>club</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in demandes %}
+    <tr>
+
+        <td>{{ i.dureInsc }}</td>
+        <td>{{ i.modePayment }}</td>
+        <td>{{ i.etatDemande }}</td>
+        <td>{{ i.numParent }}</td>
+        <td>{{ i.ancienClub}}</td>
+        <td>{{ i.clubId.nomclub }}</td>
+        {% endfor %}
+    </tr>
+    </tbody>
+</table>

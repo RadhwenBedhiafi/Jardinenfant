@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Plat</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ plat.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomplat</th>
+                <td>{{ plat.nomPlat }}</td>
+            </tr>
+            <tr>
+                <th>Photoplat</th>
+                <td>{{ plat.photoPlat }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if plat.date %}{{ plat.date|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('plats_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('plats_edit', { 'id': plat.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

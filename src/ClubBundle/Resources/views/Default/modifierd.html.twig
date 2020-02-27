@@ -1,0 +1,165 @@
+{% extends 'baseBack.html.twig' %}
+{%  block body %}
+
+    <!-- partial -->
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title"> Form elements </h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Forms</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Basic form elements</h4>
+                            <p class="card-description"> Basic form elements </p>
+                            <div class="form-group">
+                                {{ form_start(form) }}
+                                {{ form_widget(form.dureInsc) }}<br>
+                                <span class="genric-btn danger circle small" id="misscin">Error</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail3">Description</label>
+                                {{ form_widget(form.modePayment) }}<br>
+                                <span id="misspayment">Error hey</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword4">horraire</label>
+                                {{ form_widget(form.numParent) }}<br>
+                                <span id="missnum">number non valide</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword4">horraire</label>
+                                {{ form_widget(form.ancienClub) }}<br>
+                                <span id="missancien">error</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputCity1">Tarif</label>
+                                {{ form_widget(form.objectif) }}<br>
+                                <span id="missobj">error syntaxe</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputCity1">club desiré</label>
+                                {{ form_widget(form.clubId) }}
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputCity1">etat demande</label>
+                                {{ form_widget(form.etatDemande) }}
+                            </div>
+
+
+                            <a href="{{ path('consulterdem') }}"><input class="btn btn-gradient-primary mr-2" type="submit" value="Modifier"  ></a>
+                            {{ form_end(form) }}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+
+
+            $(document).ready(function () {
+                $('#misscin').hide();
+                $('#clubbundle_demandedad_dureInsc').keyup(function () {
+                    var re = /^[0-9 \t]{1,}$/i;
+                    var x = $('#clubbundle_demandedad_dureInsc').val();
+                    if (re.test(x)) {
+
+                        $('#btn').prop('disabled', false);
+                        $('#misscin').hide();
+
+
+                    } else {
+
+
+
+                        $('#misscin').show();
+
+
+
+                        $('#btn').prop('disabled', true);
+                    }
+
+                });
+            })
+
+
+
+            $(document).ready(function () {
+                $('#misspayment').hide();
+                $('#clubbundle_demandedad_modePayment').keyup(function () {
+
+
+
+                    var re = /^[a-z \t]{1,}$/i;
+                    var x = $('#clubbundle_demandedad_modePayment').val();
+                    if (re.test(x)) {
+                        $('#btn').prop('disabled', false);
+                        $('#misspayment').hide();
+                    } else {
+                        $('#misspayment').show();
+                        $('#btn').prop('disabled', true);
+                    }
+                });
+            })
+            $(document).ready(function () {
+                $('#missnum').hide();
+                $('#clubbundle_demandedad_numParent').keyup(function () {
+
+
+
+                    var re = /^[0-9 \t]{1,}$/i;
+                    var x = $('#clubbundle_demandedad_numParent').val();
+                    if (re.test(x)) {
+                        $('#btn').prop('disabled', false);
+                        $('#missnum').hide();
+                    } else {
+                        $('#missnum').show();
+                        $('#btn').prop('disabled', true);
+                    }
+                });
+            })
+            $(document).ready(function () {
+                $('#missancien').hide();
+                $('#clubbundle_demandedad_ancienClub').keyup(function () {
+
+
+
+                    var re = /^[a-z \t]{1,}$/i;
+                    var x = $('#clubbundle_demandedad_ancienClub').val();
+                    if (re.test(x)) {
+                        $('#btn').prop('disabled', false);
+                        $('#missancien').hide();
+                    } else {
+                        $('#missancien').show();
+                        $('#btn').prop('disabled', true);
+                    }
+                });
+            })
+            $(document).ready(function () {
+                $('#missobj').hide();
+                $('#clubbundle_demandedad_objectif').keyup(function () {
+
+
+
+                    var re = /^[a-z \t]{1,}$/i;
+                    var x = $('#clubbundle_demandedad_objectif').val();
+                    if (re.test(x)) {
+                        $('#btn').prop('disabled', false);
+                        $('#missobj').hide();
+                    } else {
+                        $('#missobj').show();
+                        $('#btn').prop('disabled', true);
+                    }
+                });
+            })
+        </script>
+        {% endblock %}

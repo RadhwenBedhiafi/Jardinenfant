@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <h1>Lignetransports list</h1>
+
+
+            <div >
+                <h2>chercher une ligne de Transport!!</h2>
+
+                    <!-- /input-group -->
+                <div class="main_menu">
+                    <div class="search_input" id="search_input_box" style="text-align: center;">
+                        <div class="container">
+                            <input align="center" type="text" class="form-control" id="Search" placeholder="Search Here">
+                        </div>
+                    </div>
+
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="container">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="icon-bar"></span> <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+
+                        </div>
+                    </nav>
+                </div>
+
+
+
+            <table bgcolor="#f5f5dc" border="3" align="center">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Heuredepart</th>
+            <th>Station</th>
+            <th>Vehicule</th>
+            <th>Tarif</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for ligneTransport in ligneTransports %}
+            <tr class="search">
+                <td><a href="{{ path('lignetransport_show', { 'id': ligneTransport.id }) }}">{{ ligneTransport.id }}</a></td>
+                <td>{% if ligneTransport.heureDepart %}{{ ligneTransport.heureDepart|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ ligneTransport.station }}</td>
+                <td>{{ ligneTransport.vehicule }}</td>
+                <td>{{ ligneTransport.tarif }}</td>
+
+
+                <td>
+                    <button class="click-btn btn btn-default">
+                                <a href="{{ path('lignetransport_showf', { 'id': ligneTransport.id }) }}">show</a>
+                            </button>
+                </td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+
+            </table>
+            </div>
+
+
+
+{#recherche avancé en ajax #}
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+        <script>
+            $(document).ready(function () {
+                function Contains(text_one, text_two) {
+                    if (text_one.indexOf(text_two) != -1)
+                        return true;
+                }
+                $("#Search").keyup(function () {
+                    var searchText = $("#Search").val().toLowerCase();
+                    $(".search").each(function () {
+                        if (!Contains($(this).text().toLowerCase(), searchText)) {
+                            $(this).hide();
+                        }
+                        else {
+                            $(this).show();
+                        }
+                    });
+                });
+            });
+
+        </script>
+
+
+
+
+
+    <ul>
+        <li>
+            <a href="{{ path('affichage_notif') }}">Consulter les notifications</a>
+        </li>
+    </ul>
+        <ul>
+            <li>
+                <a href="/message">Consulter messagerie</a>
+            </li>
+        </ul>
+
+
+
+
+
+
+    {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+
+<div class="alert alert-warning" role="alert">
+    <strong>Warning!</strong> Vous devez etre un abonné pour inscrire votre enfant
+    Clickez <a href="{{ path('fos_user_registration_register') }}"> ICI</a>
+    pour vous inscrire ou vous pouvez vous authentifiez <a href="{{ path('fos_user_security_login') }}">ICI</a>
+
+</div>
+{% endif %}
+
+
+
+{% endblock %}

@@ -1,0 +1,68 @@
+enfant:
+    resource: "@EnfantBundle/Resources/config/routing.yml"
+    prefix:   /
+
+cantine:
+    resource: "@cantineBundle/Resources/config/routing.yml"
+    prefix:   /plat
+cantine_ticket:
+    resource: "@cantineBundle/Controller/ticketController.php"
+    type:     annotation
+
+cantine_plats:
+    resource: "@cantineBundle/Controller/platsController.php"
+    type:     annotation
+event:
+    resource: "@eventBundle/Resources/config/routing.yml"
+    prefix:   /
+adesigns_calendar:
+    resource: "@ADesignsCalendarBundle/Resources/config/routing.xml"
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+
+
+
+
+
+
+forum:
+    resource: "@ForumBundle/Resources/config/routing.yml"
+    prefix:   /
+club:
+    resource: "@ClubBundle/Resources/config/routing.yml"
+    prefix:   /
+
+transport:
+    resource: "@transportBundle/Resources/config/routing.yml"
+    prefix:   /transport
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+
+fos_message:
+    resource: "@FOSMessageBundle/Resources/config/routing.xml"
+    prefix:   /message
+
+
+admin_home:
+    path:     /home
+    defaults: { _controller: AppBundle:User:redirect }
+ajax_search:
+    path:     /search
+    defaults: { _controller: transportBundle:Default:search}
+    methods:  GET
+
+graphePie:
+    path:     /statistique
+    defaults: { _controller: transportBundle:ligneTransport:statistique}
+affichage_notif:
+    path:     /Notif
+    defaults: { _controller: transportBundle:ligneTransport:afficherNotif}

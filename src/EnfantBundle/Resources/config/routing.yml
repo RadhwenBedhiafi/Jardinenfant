@@ -1,0 +1,50 @@
+enfant_homepage:
+    path:     /hh
+    defaults: { _controller: EnfantBundle:Default:index }
+
+classe_ajout:
+    path:     /ajoutClasse
+    defaults: { _controller: EnfantBundle:Classe:ajout }
+classe_list:
+    path:     /listClasse
+    defaults: { _controller: EnfantBundle:Classe:list }
+
+classe_delete:
+    path:     /delete/{id}
+    defaults: { _controller: EnfantBundle:Classe:delete }
+
+classe_update:
+    path:     /update/{id}
+    defaults: { _controller: EnfantBundle:Classe:update }
+
+enfant_inscription:
+    path:     /inscription
+    defaults: { _controller: EnfantBundle:Enfant:inscription }
+enfant_inscriptiontermine:
+    path:     /inscriptiontermine
+    defaults: { _controller: EnfantBundle:Enfant:inscriptiontermine }
+enfant_affecter:
+    path:     /affecter/{id}
+    defaults: { _controller: EnfantBundle:Enfant:affecter }
+
+enfant_listenfant:
+    path:     /listenfant
+    defaults: { _controller: EnfantBundle:Enfant:listenfant }
+
+enfant_delete:
+    path:     /deleteenfant/{id}
+    defaults: { _controller: EnfantBundle:Enfant:deleteenfant }
+
+enfant_update:
+    path:    /updateenfant/{id}
+    defaults: { _controller: EnfantBundle:Enfant:updateenfant }
+
+enfant_recherche:
+    path:     /recherche
+    defaults: { _controller: EnfantBundle:Enfant:recherche }
+classe_recherche:
+    path:     /rechercheClasse
+    defaults: { _controller: EnfantBundle:Classe:rechercheclasse }
+pdf_print:
+    path:     /pdf
+    defaults: { _controller: EnfantBundle:Enfant:pdf }

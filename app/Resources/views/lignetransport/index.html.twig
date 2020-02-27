@@ -1,0 +1,52 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block body %}
+    <h1>Lignetransports list</h1>
+
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Heuredepart</th>
+                <th>Station</th>
+                <th>Vehicule</th>
+                <th>Tarif</th>
+                <th>capacite</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        {% for ligneTransport in ligneTransports %}
+            <tr>
+                <td><a href="{{ path('lignetransport_show', { 'id': ligneTransport.id }) }}">{{ ligneTransport.id }}</a></td>
+                <td>{% if ligneTransport.heureDepart %}{{ ligneTransport.heureDepart|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ ligneTransport.station }}</td>
+                <td>{{ ligneTransport.vehicule }}</td>
+                <td>{{ ligneTransport.tarif }}</td>
+                <td>{{ ligneTransport.capacite }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('lignetransport_show', { 'id': ligneTransport.id }) }}">show</a>
+
+                        </li>
+
+                        <li>
+                            <a href="{{ path('lignetransport_edit', { 'id': ligneTransport.id }) }}">edit</a>
+                        </li>
+
+
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+        </tbody>
+
+    <ul>
+        <li>
+            <a href="{{ path('lignetransport_new') }}">Create a new ligneTransport</a>
+        </li>
+    </ul>
+{% endblock %}

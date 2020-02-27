@@ -1,0 +1,148 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <!--================Home Banner Area =================-->
+
+    <!--================End Home Banner Area =================-->
+
+    <!--================Contact Area =================-->
+    <section class="contact_area section_gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+
+                        {{ form_start(form) }}
+
+                        {{ form_widget(form.dureInsc, {'attr': {'class': 'form-control','placeholder':'Dure dinscription'} }) }}</br>
+                    <span class="genric-btn danger circle small" id="misscin">Error</span>
+
+
+                        {{ form_widget(form.modePayment, {'attr': {'class': 'form-control','placeholder':'mode de payment'} }) }}</br>
+                    <span id="misspayment">Error hey</span>
+
+
+                        {{ form_widget(form.numParent, {'attr': {'class': 'form-control','placeholder':'num de parent'} }) }}</br>
+                    <span id="missnum">number non valide</span>
+                        {{ form_widget(form.ancienClub, {'attr': {'class': 'form-control','placeholder':'ancien club'} }) }}</br>
+                    <span id="missancien">error</span>
+                        {{ form_widget(form.objectif , {'attr': {'class': 'form-control','placeholder':'objectif'} }) }}</br>
+                    <span id="missobj">error syntaxe</span>
+                        {{ form_widget(form.clubId , {'attr': {'class': 'form-control','placeholder':'club desiré'} }) }}</br>
+
+                    {{ form_widget(form.etatDemande , {'attr': {'class': 'form-control','placeholder':'0'},  }) }}</br>
+
+
+
+                    <button type="submit" id="btn" class="btn primary-btn" style="float: right">Envoyer</button>
+
+
+
+
+                        {{ form_end(form) }}
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+
+
+    $(document).ready(function () {
+            $('#misscin').hide();
+            $('#clubbundle_demandedad_dureInsc').keyup(function () {
+                        var re = /^[0-9 \t]{1,}$/i;
+                        var x = $('#clubbundle_demandedad_dureInsc').val();
+                        if (re.test(x)) {
+
+                            $('#btn').prop('disabled', false);
+                            $('#misscin').hide();
+
+
+                        } else {
+
+
+
+                            $('#misscin').show();
+
+
+
+                            $('#btn').prop('disabled', true);
+                        }
+
+                });
+        })
+
+
+
+    $(document).ready(function () {
+        $('#misspayment').hide();
+        $('#clubbundle_demandedad_modePayment').keyup(function () {
+
+
+
+            var re = /^[a-z \t]{1,}$/i;
+            var x = $('#clubbundle_demandedad_modePayment').val();
+            if (re.test(x)) {
+                $('#btn').prop('disabled', false);
+                $('#misspayment').hide();
+            } else {
+                $('#misspayment').show();
+                $('#btn').prop('disabled', true);
+            }
+        });
+    })
+    $(document).ready(function () {
+        $('#missnum').hide();
+        $('#clubbundle_demandedad_numParent').keyup(function () {
+
+
+
+            var re = /^[0-9 \t]{1,}$/i;
+            var x = $('#clubbundle_demandedad_numParent').val();
+            if (re.test(x)) {
+                $('#btn').prop('disabled', false);
+                $('#missnum').hide();
+            } else {
+                $('#missnum').show();
+                $('#btn').prop('disabled', true);
+            }
+        });
+    })
+    $(document).ready(function () {
+        $('#missancien').hide();
+        $('#clubbundle_demandedad_ancienClub').keyup(function () {
+
+
+
+            var re = /^[a-z \t]{1,}$/i;
+            var x = $('#clubbundle_demandedad_ancienClub').val();
+            if (re.test(x)) {
+                $('#btn').prop('disabled', false);
+                $('#missancien').hide();
+            } else {
+                $('#missancien').show();
+                $('#btn').prop('disabled', true);
+            }
+        });
+    })
+    $(document).ready(function () {
+        $('#missobj').hide();
+        $('#clubbundle_demandedad_objectif').keyup(function () {
+
+
+
+            var re = /^[a-z \t]{1,}$/i;
+            var x = $('#clubbundle_demandedad_objectif').val();
+            if (re.test(x)) {
+                $('#btn').prop('disabled', false);
+                $('#missobj').hide();
+            } else {
+                $('#missobj').show();
+                $('#btn').prop('disabled', true);
+            }
+        });
+    })
+            </script>
+{% endblock %}

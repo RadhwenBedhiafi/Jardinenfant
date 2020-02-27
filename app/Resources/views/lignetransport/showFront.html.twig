@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Lignetransport</h1>
+
+    <table bgcolor="#f5f5dc" border="3" align="center">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ ligneTransport.id }}</td>
+        </tr>
+        <tr>
+            <th>Heuredepart</th>
+            <td>{% if ligneTransport.heureDepart %}{{ ligneTransport.heureDepart|date('Y-m-d H:i:s') }}{% endif %}</td>
+        </tr>
+        <tr>
+            <th>Station</th>
+            <td>{{ ligneTransport.station }}</td>
+        </tr>
+        <tr>
+            <th>Vehicule</th>
+            <td>{{ ligneTransport.vehicule }}</td>
+        </tr>
+        <tr>
+            <th>Tarif</th>
+            <td>{{ ligneTransport.tarif }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('lignetransport_indexf') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('demanderLigne', { 'id': ligneTransport.id }) }}" OnClick="notifyMe();">Demander</a>
+        </li>
+
+    </ul>
+    <script type="text/javascript">
+        function notifyMe() {
+            if (!("Notification" in window)) {
+                alert("This browser does not support system notifications");
+            }
+            else if (Notification.permission === "granted") {
+                notify();
+            }
+            else if (Notification.permission !== 'denied') {
+                Notification.requestPermission(function (permission) {
+                    if (permission === "granted") {
+                        notify();
+                    }
+                });
+            }
+
+            function notify() {
+                var notification = new Notification('Demande', {
+                    icon: '../../notifier.png',
+                    body: "Hey! Votre demande est en cours de traitement!",
+
+                });
+
+                notification.onclick = function () {
+                };
+                setTimeout(notification.close.bind(notification), 5000);
+            }
+
+        }
+    </script>
+{% endblock %}

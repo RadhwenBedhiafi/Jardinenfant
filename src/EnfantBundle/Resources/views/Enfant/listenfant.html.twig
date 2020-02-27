@@ -1,0 +1,98 @@
+{% extends 'baseBack.html.twig' %}
+{% block body %}
+    <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Liste des enfants</h4>
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Identifiant</th>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Sexe</th>
+                        <th>Nationalite </th>
+                        <th>Age</th>
+                        <th>Status Medical</th>
+                        <th>Photo</th>
+                        <th>Classe</th>
+                        <th>Supprimer</th>
+                        <th>Modifier</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for enfant in enfants %}
+                    <tr>
+
+                        <td>{{ enfant.id }}</td>
+
+                        <td>{{ enfant.nom }}</td>
+                        <td>{{ enfant.prenom }}</td>
+                        <td>{{ enfant.sexe }}</td>
+                        <td>{{ enfant.nationalite }}</td>
+                        <td>{{ enfant.age }}</td>
+                        <td>{{ enfant.smedical }}</td>
+                        <td><img src="{{ asset('uploads/images/products/'~enfant.image) }}"> </td>
+                        <td>{{ enfant.classe.libelle|default('') }}</td>
+
+                        <td>
+                            <a href="{{ path("enfant_delete",{'id':enfant.id}) }}" class="mdi mdi-delete" onClick="notifyMe();"></a>
+                        </td>
+                        <td>
+                            <a href="{{ path("enfant_update",{'id':enfant.id}) }}" class="mdi mdi-autorenew" OnClick="return confirm('Voulez vous vraiment modifier cet article ?');"></a>
+                        </td>
+                        <td>
+                            <a href="{{ path("enfant_affecter",{'id':enfant.id}) }}">Affecter/Permutter</a>
+                        </td>
+
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <a href="{{ path("enfant_recherche") }}" class="btn-primary btn">Rechercher</a>
+
+                    </tr>
+                    <tr>
+                        <a href="{{ path("pdf_print") }}" class="btn-primary btn">Imprimer PDF</a>
+
+                    </tr>
+                    <tr>
+
+                    </tbody>
+                </table>
+                <div class="navigation">
+                    {{ knp_pagination_render(enfants) }}
+                </div>
+            </div>
+        </div>
+    <script type="text/javascript">
+        function notifyMe() {
+            if (!("Notification" in window)) {
+                alert("This browser does not support system notifications");
+            }
+            else if (Notification.permission === "granted") {
+                notify();
+            }
+            else if (Notification.permission !== 'denied') {
+                Notification.requestPermission(function (permission) {
+                    if (permission === "granted") {
+                        notify();
+                    }
+                });
+            }
+
+            function notify() {
+                var notification = new Notification("ENFANT", {
+                    icon: '../../notifier.png',
+                    body: "Hey! Enfant supprimé avec succés!",
+
+                });
+
+                notification.onclick = function () {
+                };
+                setTimeout(notification.close.bind(notification), 5000);
+            }
+
+        }
+    </script>
+        {% endblock %}

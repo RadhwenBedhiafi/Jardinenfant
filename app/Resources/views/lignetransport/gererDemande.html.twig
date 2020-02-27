@@ -1,0 +1,97 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block body %}
+    <h1>Lignetransport</h1>
+
+    <table>
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ ligneTransport.id }}</td>
+        </tr>
+        <tr>
+            <th>Heuredepart</th>
+            <td>{% if ligneTransport.heureDepart %}{{ ligneTransport.heureDepart|date('Y-m-d H:i:s') }}{% endif %}</td>
+        </tr>
+        <tr>
+            <th>Station</th>
+            <td>{{ ligneTransport.station }}</td>
+        </tr>
+        <tr>
+            <th>Vehicule</th>
+            <td>{{ ligneTransport.vehicule }}</td>
+        </tr>
+        <tr>
+            <th>Tarif</th>
+            <td>{{ ligneTransport.tarif }}</td>
+
+        </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('lignetransport_indexback') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('lignetransport_edit', { 'id': ligneTransport.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+            <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    <h1>Lignetransports list</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>nom parent demandeur</th>
+            <th>prenom parent demandeur</th>
+            <th>Heuredepart</th>
+            <th>Station</th>
+            <th>Vehicule</th>
+            <th>Tarif</th>
+            <th>capacite</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for ligneTransport in ligneTransports %}
+            <tr>
+                <td><a href="{{ path('lignetransport_show', { 'id': ligneTransport.id }) }}">{{ ligneTransport.id }}</a></td>
+                <td><a href="{{ path('lignetransport_show', { 'id': ligneTransport.id }) }}">{{ ligneTransport.id }}</a></td>
+                <td><a href="{{ path('lignetransport_show', { 'id': ligneTransport.id }) }}">{{ ligneTransport.id }}</a></td>
+                <td>{% if ligneTransport.heureDepart %}{{ ligneTransport.heureDepart|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ ligneTransport.station }}</td>
+                <td>{{ ligneTransport.vehicule }}</td>
+                <td>{{ ligneTransport.tarif }}</td>
+                <td>{{ ligneTransport.capacite }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('lignetransport_show', { 'id': ligneTransport.id }) }}">show</a>
+
+                        </li>
+
+                        <li>
+                            <a href="{{ path('lignetransport_edit', { 'id': ligneTransport.id }) }}">edit</a>
+                        </li>
+
+
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    </tbody>
+
+    <ul>
+        <li>
+            <a href="{{ path('lignetransport_new') }}">Create a new ligneTransport</a>
+        </li>
+    </ul>
+{% endblock %}

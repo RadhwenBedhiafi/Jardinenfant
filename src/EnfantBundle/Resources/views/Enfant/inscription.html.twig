@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% block css %}
+
+    <link rel="stylesheet" href="{{ asset('dashboard/assets/vendors/mdi/css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/assets/vendors/css/vendor.bundle.base.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/assets/css/style.css') }}">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="{{ asset('dashboard/assets/images/favicon.png') }}" />
+{% endblock %}
+{% block body %}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Inscrivez votre enfant!</h4>
+
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+    {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+        <div class="alert alert-warning" role="alert">
+            <strong>Warning!</strong> Vous devez etre un abonné pour inscrire votre enfant
+            Clickez <a href="{{ path('fos_user_registration_register') }}"> ICI</a>
+            pour vous inscrire ou vous pouvez vous authentifiez <a href="{{ path('fos_user_security_login') }}">ICI</a>
+
+        </div>
+    {% endif %}
+
+
+{% endblock %}

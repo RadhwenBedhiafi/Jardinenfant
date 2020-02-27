@@ -1,0 +1,110 @@
+{% extends 'baseBack.html.twig' %}
+{% block body %}
+
+    <!-- partial -->
+    <div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-lg-12 stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Liste Des Club</h4>
+                        <a href="{{  path('ajouter') }}">Ajouter Club</a>
+                        <table class="table table-bordered" id="myTable">
+                            <thead>
+                            <tr>
+                                <th>nom_club</th>
+                                <th>Description</th>
+                                <th>Horraire</th>
+                                <th>tarif</th>
+                                <th>capacite</th>
+                                <th>image</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in A %}
+                            <td>{{ i.nomclub }}</td>
+                            <td>{{ i.description }}</td>
+                            <td>{{ i.horraire }}</td>
+                            <td>{{ i.tarif }}</td>
+                            <td>{{ i.capacite }}</td>
+                           <td> <img class="img-fluid" src="{{asset("front/img/courses/" ~ i.image )}}" alt="" /> </td>
+                            <td> <a href="{{ path('delete',{'id':i.id}) }}" OnClick="return confirm('Voulez vous vraiment supprimer cette club ?');">Supprimer</a></td>
+                            <td><a href="{{ path('modifier',{'id':i.id}) }} "OnClick="return confirm('Voulez vous vraiment modifier cette club ?');">Modifier</a> </td>
+
+
+                            </tbody>
+                            {% endfor %}
+                        </table>
+                        <br><br>
+                        <div class="navigation">
+                            {{ knp_pagination_render(A) }}
+                        </div>
+                        <br>
+                        <input id="myInput" onkeyup="myFunction()" title="type in a name" placeholder="Search">
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-12 grid-margin stretch-card">
+
+            </div>
+            <div class="col-lg-12 grid-margin stretch-card">
+
+            </div>
+
+
+
+
+
+
+
+
+
+            <div class="col-lg-12 stretch-card">
+
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function myFunction() {
+
+            var input, filter, table, tr, td, i, txtValue;
+
+            input = document.getElementById("myInput");
+
+            filter = input.value.toUpperCase();
+
+            table = document.getElementById("myTable");
+
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 0; i < tr.length; i++) {
+
+                td = tr[i].getElementsByTagName("td")[0];
+
+                if (td) {
+
+                    txtValue = td.textContent || td.innerText;
+
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+
+                        tr[i].style.display = "";
+
+                    } else {
+
+                        tr[i].style.display = "none";
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    </script>
+    <!-- content-wrapper ends -->
+{% endblock %}

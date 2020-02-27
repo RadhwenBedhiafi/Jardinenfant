@@ -1,0 +1,22 @@
+{% extends 'baseback.html.twig' %}
+
+{% block body %}
+
+    {% for li in ligneTransport %}
+
+
+        <fieldset class="col-md-6">
+
+            <table class="table">
+
+
+                <tr><td>nom</td><td>{{ li.station }}</td></tr>
+                <tr><td>id</td> <td>{{ li.id}}
+                <tr><td>etat</td> <td style="color: #ffaa00">{{ li.etat}}</td></tr>
+                <tr><td><a href="{{ path('accepter_demande', {'id':li.id}) }}">accepter</a></td> <td><a href="{{ path('refuser_demande', {'id': li.id}) }}">refuser</a></td></tr>
+            </table>
+
+        </fieldset>
+    {% endfor %}
+
+{% endblock %}

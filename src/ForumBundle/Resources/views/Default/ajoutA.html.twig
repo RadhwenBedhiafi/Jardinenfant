@@ -1,0 +1,165 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <!--================Home Banner Area =================-->
+
+    <!--================End Home Banner Area =================-->
+
+    <!--================Contact Area =================-->
+    <section class="contact_area section_gap">
+        <div class="container">
+
+            <div class="row">
+
+
+            </div>
+            <div class="col-lg-9">
+
+                <div class="col-md-6">
+                    {{ form_start(form) }}
+
+                    <div class="form-group">
+                        <label>Titre</label>
+                        {{ form_widget(form.titre, {'attr': {'class': 'form-control','placeholder':'titre'} }) }}
+                        <span class="genric-btn danger circle small" id="misstitle">Error</span>
+                        <br>
+                        <label>Description</label>
+                        {{ form_widget(form.description, {'attr': {'class': 'form-control','placeholder':'description'} }) }}
+                        <span class="genric-btn danger circle small" id="missdes">Error</span>
+                        <br>
+                        <label>Image</label>
+                        {{ form_widget(form.image, {'attr': {'class': 'form-control','placeholder':'image'} }) }}
+                        <span class="genric-btn danger circle small" id="missim">Error</span>
+                        <br>
+                        <label>Captcha</label>
+                        {{ form_widget(form.captcha, {'attr': {'class': 'form-control','placeholder':''} }) }}
+                        <br>
+                        <div class="col-md-12 text-right">
+
+                            <input class="btn primary-btn" id="btn" type="submit" value="Ajouter" >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    {{ form_end(form) }}
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================Contact Area =================-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function notifyMe() {
+            if (!("Notification" in window)) {
+                alert("This browser does not support system notifications");
+            }
+            else if (Notification.permission === "granted") {
+                notify();
+            }
+            else if (Notification.permission !== 'denied') {
+                Notification.requestPermission(function (permission) {
+                    if (permission === "granted") {
+                        notify();
+                    }
+                });
+            }
+
+            function notify() {
+                var notification = new Notification('ARTICLE', {
+                    icon: 'http://urls.ml/5yc3a',
+                    body: "Hey! Article modifié avec succés!",
+
+                });
+
+                notification.onclick = function () {
+                    window.location.replace("consulter.html.twig");
+                };
+                setTimeout(notification.close.bind(notification), 5000);
+            }
+
+        }
+    </script>
+<script>
+
+
+    $(document).ready(function () {
+        $('#misstitle').hide();
+        $('#forumbundle_article_titre').keyup(function () {
+            var re = /^[a-z \t]{1,}$/i;
+            var x = $('#forumbundle_article_titre').val();
+            if (re.test(x)) {
+
+                $('#btn').prop('disabled', false);
+                $('#misstitle').hide();
+
+
+            } else {
+
+
+
+                $('#misstitle').show();
+
+
+
+                $('#btn').prop('disabled', true);
+            }
+
+        });
+    })
+    $(document).ready(function () {
+        $('#missdes').hide();
+        $('#forumbundle_article_description').keyup(function () {
+            var re = /^^.{1,}$/i;
+            var x = $('#forumbundle_article_description').val();
+            if (re.test(x)) {
+
+                $('#btn').prop('disabled', false);
+                $('#missdes').hide();
+
+
+            } else {
+
+
+
+                $('#missdes').show();
+
+
+
+                $('#btn').prop('disabled', true);
+            }
+
+        });
+    })
+    $(document).ready(function () {
+        $('#missim').hide();
+        $('#forumbundle_article_image').keyup(function () {
+            var re = /^[a-z,0-9\\.\- \t]{1,}$/i;
+            var x = $('#forumbundle_article_image').val();
+            if (re.test(x)) {
+
+                $('#btn').prop('disabled', false);
+                $('#missim').hide();
+
+
+            } else {
+
+
+
+                $('#missim').show();
+
+
+
+                $('#btn').prop('disabled', true);
+            }
+
+        });
+    })
+    </script>
+
+{% endblock %}
+
+
+
+
+

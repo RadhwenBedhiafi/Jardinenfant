@@ -1,0 +1,27 @@
+chauffeur_index:
+    path:     /
+    defaults: { _controller: "transportBundle:chauffeur:index" }
+    methods:  GET
+
+chauffeur_show:
+    path:     /{id}/show
+    defaults: { _controller: "transportBundle:chauffeur:show" }
+    methods:  GET
+
+chauffeur_new:
+    path:     /new
+    defaults: { _controller: "transportBundle:chauffeur:new" }
+    methods:  [GET, POST]
+
+chauffeur_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "transportBundle:chauffeur:edit" }
+    methods:  [GET, POST]
+
+chauffeur_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "transportBundle:chauffeur:delete" }
+    methods:  DELETE
+pdf:
+    path:     /pdf
+    defaults: { _controller: "transportBundle:chauffeur:pdf" }

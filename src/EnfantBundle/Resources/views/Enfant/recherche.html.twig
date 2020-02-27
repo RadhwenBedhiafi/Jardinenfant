@@ -1,0 +1,101 @@
+{% extends 'baseBack.html.twig' %}
+{% block body %}
+<div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div
+                <h2>chercher un enfant!!</h2>
+
+                <!-- /input-group -->
+                <div class="main_menu">
+                    <div class="search_input" id="search_input_box" style="text-align: center;">
+                        <div class="container">
+                            <input align="center" type="text" class="form-control" id="Search" placeholder="Search Here">
+                        </div>
+                    </div>
+
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="container">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="icon-bar"></span> <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+
+                        </div>
+                    </nav>
+                </div>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Identifiant</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Sexe</th>
+                    <th>Nationalite </th>
+                    <th>Age</th>
+                    <th>Status Medical</th>
+                    <th>Photo</th>
+                    <th>Classe</th>
+                    <th>Supprimer</th>
+                    <th>Modifier</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for enfant in enfants %}
+                <tr class="search">
+
+                    <td>{{ enfant.id }}</td>
+
+                    <td>{{ enfant.nom }}</td>
+                    <td>{{ enfant.prenom }}</td>
+                    <td>{{ enfant.sexe }}</td>
+                    <td>{{ enfant.nationalite }}</td>
+                    <td>{{ enfant.age }}</td>
+                    <td>{{ enfant.smedical }}</td>
+                    <td><img src="{{ asset('uploads/images/products/'~enfant.image) }}"> </td>
+                    <td>{{ enfant.classe.libelle|default('') }}</td>
+
+                    <td>
+                        <a href="{{ path("enfant_delete",{'id':enfant.id}) }}" class="mdi mdi-delete"> </a>
+                    </td>
+                    <td>
+                        <a href="{{ path("enfant_update",{'id':enfant.id}) }}" class="mdi mdi-autorenew"></a>
+                    </td>
+                    <td>
+                        <a href="{{ path("enfant_affecter",{'id':enfant.id}) }}">Affecter</a>
+                    </td>
+
+                    {% endfor %}
+                </tr>
+                <tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+        <script>
+            $(document).ready(function () {
+                function Contains(text_one, text_two) {
+                    if (text_one.indexOf(text_two) != -1)
+                        return true;
+                }
+                $("#Search").keyup(function () {
+                    var searchText = $("#Search").val().toLowerCase();
+                    $(".search").each(function () {
+                        if (!Contains($(this).text().toLowerCase(), searchText)) {
+                            $(this).hide();
+                        }
+                        else {
+                            $(this).show();
+                        }
+                    });
+                });
+            });
+
+        </script>
+    {% endblock %}

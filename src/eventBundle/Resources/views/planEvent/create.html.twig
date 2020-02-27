@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+{% block title %} New event {% endblock %}
+   {% block css %}
+
+       <link rel="stylesheet" href="{{ asset('dashboard/assets/vendors/mdi/css/materialdesignicons.min.css') }}">
+       <link rel="stylesheet" href="{{ asset('dashboard/assets/vendors/css/vendor.bundle.base.css') }}">
+       <link rel="stylesheet" href="{{ asset('dashboard/assets/css/style.css') }}">
+       <!-- End layout styles -->
+       <link rel="shortcut icon" href="{{ asset('dashboard/assets/images/favicon.png') }}" />
+   {% endblock %}
+
+{% block body %}
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Basic form elements</h4>
+                <p class="card-description"> Basic form elements </p>
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <input type="submit" value="Create" />
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{ asset('dashboard/assets/vendors/js/vendor.bundle.base.js') }}"></script>
+    <script src="{{ asset('dashboard/assets/js/off-canvas.js') }}"></script>
+    <script src="{{ asset('dashboard/assets/js/hoverable-collapse.js') }}"></script>
+    <script src="{{ asset('dashboard/assets/js/misc.js') }}"></script>
+
+    <script src="{{ asset('dashboard/assets/js/file-upload.js') }}"></script>
+
+{% endblock %}

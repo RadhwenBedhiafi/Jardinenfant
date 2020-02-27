@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <!--================Home Banner Area =================-->
+
+    <!--================End Home Banner Area =================-->
+
+    <!--================Contact Area =================-->
+    <section class="contact_area section_gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+
+                    {{ form_start(form) }}
+                    {{ form_widget(form.subject, {'attr': {'class': 'form-control','placeholder':'subject'} }) }}
+                    <span class="genric-btn danger circle small" id="missa">Error</span>
+                    </br>
+                    {{ form_widget(form.mail, {'attr': {'class': 'form-control','placeholder':'mail@gmail.com'} }) }}
+                    <span class="genric-btn danger circle small" id="missmail">Error</span>
+                    </br>
+                    {{ form_widget(form.object, {'attr': {'class': 'form-control','placeholder':'object'} }) }}
+                    <span class="genric-btn danger circle small" id="missob">Error</span>
+                    </br>
+                    <button type="submit" class="btn primary-btn"  id="btn" style="float: right">Envoyer</button>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================Contact Area =================-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+
+
+
+
+        $(document).ready(function () {
+            $('#missmail').hide();
+            $('#forumbundle_mail_mail').keyup(function () {
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                var x = $('#forumbundle_mail_mail').val();
+                if (re.test(x)) {
+
+                    $('#btn').prop('disabled', false);
+                    $('#missmail').hide();
+
+
+                } else {
+
+
+
+                    $('#missmail').show();
+
+
+
+                    $('#btn').prop('disabled', true);
+                }
+
+            });
+        })
+        $(document).ready(function () {
+            $('#missa').hide();
+            $('#forumbundle_mail_subject').keyup(function () {
+                var re = /^[a-z \t]{1,}$/i;
+                var x = $('#forumbundle_mail_subject').val();
+                if (re.test(x)) {
+
+                    $('#btn').prop('disabled', false);
+                    $('#missa').hide();
+
+
+                } else {
+
+
+
+                    $('#missa').show();
+
+
+
+                    $('#btn').prop('disabled', true);
+                }
+
+            });
+        })
+        $(document).ready(function () {
+            $('#missob').hide();
+            $('#forumbundle_mail_object').keyup(function () {
+                var re = /^^.{1,}$/i;
+                var x = $('#forumbundle_mail_object').val();
+                if (re.test(x)) {
+
+                    $('#btn').prop('disabled', false);
+                    $('#missob').hide();
+
+
+                } else {
+
+
+
+                    $('#missob').show();
+
+
+
+                    $('#btn').prop('disabled', true);
+                }
+
+            });
+        })
+    </script>
+
+
+{% endblock %}

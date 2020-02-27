@@ -1,0 +1,33 @@
+<html>
+<head>
+
+    <title>Message sending service </title>
+
+</head>
+<body>
+<h1> Envoyer SMS</h1>
+<form action="{{ path('sendsms_route') }}" method="POST">
+    <table>
+        <tr>
+            <td><label>ENTER MOBILE NUMBRER</label></td>
+            <td><input type="text" name="mobile" ></td>
+        </tr>
+        <tr>
+            <td><label>ENTER SMS </label></td>
+            <td><textarea name="message" rows="5" cols="22" ></textarea></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Send SMS"/></td>
+        </tr>
+
+    </table>
+
+</form>
+
+</body>
+
+
+
+
+
+</html>

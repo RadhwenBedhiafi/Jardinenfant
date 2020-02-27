@@ -1,0 +1,27 @@
+<h1>{{ title }}</h1>
+<table border ="4">
+    <thead>
+    <tr>
+        <th>Identifiant</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Station</th>
+        <th>Heure de depart </th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for chauffeur in chauffeurs %}
+    <tr>
+
+        <td>{{ chauffeur.id }}</td>
+
+        <td>{{ chauffeur.nom }}</td>
+        <td>{{ chauffeur.prenom }}</td>
+        <td>{{ chauffeur.lignec.station|default('') }}</td>
+        <td>{{ chauffeur.lignec.heureDepart|default('')|date("F jS \\a\\t g:ia") }}</td>
+
+        {% endfor %}
+    </tr>
+    </tbody>
+</table>

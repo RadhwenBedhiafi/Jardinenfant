@@ -1,0 +1,168 @@
+{% extends 'baseBack.html.twig' %}
+
+{%  block body %}
+
+    <!-- partial -->
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title"> Form elements </h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Forms</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Basic form elements</h4>
+                            <p class="card-description"> Basic form elements </p>
+                            <div class="form-group">
+                                {{ form_start(form) }}
+                                <label for="exampleInputName1">Name</label>
+                                {{ form_widget(form.nomclub, {'attr': {'class': 'form-control','placeholder':'Nomclub'} }) }}<br>
+                                <span id="missnom">Error</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail3">Description</label>
+                                {{ form_widget(form.description, {'attr': {'class': 'form-control','placeholder':'Description'} }) }}<br>
+                                <span id="missdess">Error syntaxe</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword4">horraire</label>
+                                {{ form_widget(form.horraire, {'attr': {'class': 'form-control','placeholder':'horraire'} }) }}<br>
+                                <span id="misshorraire">Error</span>
+                            </div>
+                            <div class="form-group">
+                                <label>File upload</label>
+                                <input type="file" name="img[]" class="file-upload-default">
+                                <div class="input-group col-xs-12">
+                                    {{ form_widget(form.image, {'attr': {'class': 'form-control','placeholder':'image'} }) }}
+                                    <span class="input-group-append">
+                            <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
+                          </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputCity1">Tarif</label>
+                                {{ form_widget(form.tarif, {'attr': {'class': 'form-control','placeholder':'tarif'} }) }}<br>
+                                <span id="misstarif">Error write numbers</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputCity1">capacite</label>
+                                {{ form_widget(form.capacite, {'attr': {'class': 'form-control','placeholder':'capacite'} }) }}
+                                <span id="misscap">Error numbers only</span>
+                            </div>
+
+
+                            <a href="{{ path('backindex') }}"><input class="btn btn-gradient-primary mr-2" type="submit" id="btn" value="ajouter"  ></a>
+                            {{ form_end(form) }}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+
+
+        $(document).ready(function () {
+            $('#missnom').hide();
+            $('#clubbundle_club_nomclub').keyup(function () {
+                var re = /^[a-z \t]{1,}$/i;
+                var x = $('#clubbundle_club_nomclub').val();
+                if (re.test(x)) {
+
+                    $('#btn').prop('disabled', false);
+                    $('#missnom').hide();
+
+
+                } else {
+
+
+
+                    $('#missnom').show();
+
+
+
+                    $('#btn').prop('disabled', true);
+                }
+
+            });
+        })
+        $(document).ready(function () {
+            $('#missdess').hide();
+            $('#clubbundle_club_description').keyup(function () {
+
+
+
+                var re = /^[a-z \t]{1,}$/i;
+                var x = $('#clubbundle_club_description').val();
+                if (re.test(x)) {
+                    $('#btn').prop('disabled', false);
+                    $('#missdess').hide();
+                } else {
+                    $('#missdess').show();
+                    $('#btn').prop('disabled', true);
+                }
+            });
+        })
+        $(document).ready(function () {
+            $('#misshorraire').hide();
+            $('#clubbundle_club_horraire').keyup(function () {
+
+
+
+                var re = /^[0-9 \t]{1,}$/i;
+                var x = $('#clubbundle_club_horraire').val();
+                if (re.test(x)) {
+                    $('#btn').prop('disabled', false);
+                    $('#misshorraire').hide();
+                } else {
+                    $('#misshorraire').show();
+                    $('#btn').prop('disabled', true);
+                }
+            });
+        })
+
+        $(document).ready(function () {
+            $('#misstarif').hide();
+            $('#clubbundle_club_tarif').keyup(function () {
+
+
+
+                var re = /^[0-9 \t]{1,}$/i;
+                var x = $('#clubbundle_club_tarif').val();
+                if (re.test(x)) {
+                    $('#btn').prop('disabled', false);
+                    $('#misstarif').hide();
+                } else {
+                    $('#misstarif').show();
+                    $('#btn').prop('disabled', true);
+                }
+            });
+        })
+        $(document).ready(function () {
+            $('#misscap').hide();
+            $('#clubbundle_club_capacite').keyup(function () {
+
+
+
+                var re = /^[0-9 \t]{1,}$/i;
+                var x = $('#clubbundle_club_capacite').val();
+                if (re.test(x)) {
+                    $('#btn').prop('disabled', false);
+                    $('#misscap').hide();
+                } else {
+                    $('#misscap').show();
+                    $('#btn').prop('disabled', true);
+                }
+            });
+        })
+
+</script>
+        {% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <div class="col-lg-12">
+        <div class="owl-carousel active_course">
+            {% for e in events %}
+
+            <div class="single_course">
+                <div class="course_head">
+                    <img class="img-fluid" src="{{ e.image}}" alt="" />
+                </div>
+                <div class="course_content">
+
+                    <span class="tag mb-4 d-inline-block" style="background-color: #4cd3e3;">{{ e.titre}}</span>
+                    <h4 class="mb-3">
+                        <a href="course-details.html">{{ e.sujet }}</a>
+                    </h4>
+                    <p>
+                       {{ e.description}}
+                    </p>
+                    
+                    <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+                        <a href="{{ path('rating', {id : e.id}) }}">Rate</a>
+                    </div>
+                </div>
+            </div>
+{% endfor %}
+
+        </div>
+    </div>
+{% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+    <div class="alert alert-warning" role="alert">
+        <strong>Warning!</strong> Vous devez etre un abonné pour inscrire votre enfant
+        Clickez <a href="{{ path('fos_user_registration_register') }}"> ICI</a>
+        pour vous inscrire ou vous pouvez vous authentifiez <a href="{{ path('fos_user_security_login') }}">ICI</a>
+
+    </div>
+    {% endif %}
+    {% endblock %}

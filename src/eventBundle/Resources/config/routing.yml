@@ -1,0 +1,40 @@
+event_homepage:
+    path:     /eventBack
+    defaults: { _controller: eventBundle:evennements:index }
+event_new:
+    path:     /new
+    defaults: { _controller: eventBundle:evennements:new }
+rating:
+    path:     /rating/{id}
+    defaults: { _controller: eventBundle:Default:rating }
+event_edit:
+    path:     /edit/{id}
+    defaults: { _controller: eventBundle:evennements:edit }
+event_delete:
+    path:     /delete/{id}
+    defaults: { _controller: eventBundle:evennements:delete }
+plan_homepage:
+    path:     /plan
+    defaults: { _controller: eventBundle:PlanEvent:index}
+plan_new:
+    path:     /plan/new
+    defaults: { _controller: eventBundle:PlanEvent:new }
+plan_edit:
+    path:     /plan/edit/{id}
+    defaults: { _controller: eventBundle:PlanEvent:edit }
+plan_delete:
+    path:     /plan/delete/{id}
+    defaults: { _controller: eventBundle:PlanEvent:delete }
+front:
+    path:     /front
+    defaults: { _controller: eventBundle:Default:front }
+frontevent:
+    path:     /frontevent
+    defaults: { _controller: eventBundle:Default:event }
+evenements_showgeo1:
+    path: /showgeo/{id}
+    defaults: { _controller: "eventBundle:evennements:geo" }
+    methods:  [GET]
+notif:
+    path:     /notif
+    defaults: { _controller: "eventBundle:evennements:notif" }

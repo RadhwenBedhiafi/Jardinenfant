@@ -1,0 +1,49 @@
+club_homepage:
+    path:     /club
+    defaults: { _controller: ClubBundle:Default:index }
+details:
+  path:     /details/{id}
+  defaults: { _controller: ClubBundle:Default:details }
+backindex:
+  path:     /listC
+  defaults: { _controller: ClubBundle:Default:backindex }
+delete:
+  path:     /listC/{id}
+  defaults: { _controller: ClubBundle:Default:delete }
+modifier:
+  path:     /modifier/{id}
+  defaults: { _controller: ClubBundle:Default:modifier }
+ajouter:
+  path:     /addclub
+  defaults: { _controller: ClubBundle:Default:add }
+demandeadd:
+    path:     /addem
+    defaults: { _controller: ClubBundle:Default:demandeadd }
+consulterdem:
+  path:     /d
+  defaults: { _controller: ClubBundle:Default:consulterd }
+deleted:
+  path:     /d/{id}
+  defaults: { _controller: ClubBundle:Default:deleted }
+modifierd:
+  path:     /modifierd/{id}
+  defaults: { _controller: ClubBundle:Default:modifierd }
+
+add:
+    path:     /add
+    defaults: { _controller: ClubBundle:Security:add }
+
+sendMail:
+    path:     /mai
+    defaults: { _controller: ForumBundle:Mail:sendMail }
+
+Stat:
+  path:     /stat
+  defaults: { _controller: ClubBundle:Default:Stat}
+
+pdfd:
+  path:     /pdfd
+  defaults: { _controller: ClubBundle:Default:pdfd}
+
+
+
