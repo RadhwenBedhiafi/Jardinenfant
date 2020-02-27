@@ -22,11 +22,25 @@ class evennementsController extends Controller
 
         $ev = $em->getRepository('eventBundle:evennements')->findAll();
 
+        $lastIndex = end($ev);
+        //var_dump($houssem);
         return $this->render('@event/Default/index.html.twig', array(
             'events' => $ev,
+            'l' => $lastIndex
         ));
     }
+    public function notifAction()
+    {
+        $em = $this->getDoctrine()->getManager();
 
+        $ev = $em->getRepository('eventBundle:evennements')->findAll();
+        $lastIndex = end($ev);
+        //var_dump($houssem);
+        return $this->render('@event/Default/indexfront.html.twig', array(
+            'events' => $ev,
+            'l' => $lastIndex
+        ));
+    }
     /**
      * Creates a new evennement entity.
      *

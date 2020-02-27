@@ -2,7 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e566be17-5aca-4324-98a3-a7078e15006f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/eventBundle/Resources/views/Default/rating.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/frontend/edustage/img/event.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/happy-kid.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/happy-kid.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/base_backend.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base_backend.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/base_frontend.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base_frontend.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/calendar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/calendar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventBundle/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventBundle/Controller/evennementsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventBundle/Controller/evennementsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventBundle/Entity/PlanEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventBundle/Entity/PlanEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventBundle/Entity/evennements.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventBundle/Entity/evennements.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventBundle/Form/evennementsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventBundle/Form/evennementsType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventBundle/Resources/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventBundle/Resources/views/Default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventBundle/Resources/views/Default/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventBundle/Resources/views/Default/indexfront.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventBundle/Resources/views/Default/indexfront.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventBundle/Resources/views/Default/listevent.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventBundle/Resources/views/Default/listevent.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventBundle/Resources/views/planEvent/planlist.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventBundle/Resources/views/planEvent/planlist.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +83,7 @@
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/jsrouting-bundle" />
       <path value="$PROJECT_DIR$/vendor/willdurand/jsonp-callback-validator" />
       <path value="$PROJECT_DIR$/vendor/adesigns/calendar-bundle" />
+      <path value="$PROJECT_DIR$/vendor/blackknight467/star-rating-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1XfkFa5G3RXN87IuWm18dtn9B3I" />
@@ -86,6 +108,8 @@
       <recent name="C:\wamp64\www\happy-kid\app\Resources\views\default" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\happy-kid\web\bundles" />
+      <recent name="C:\wamp64\www\happy-kid\web\frontend\edustage\img" />
       <recent name="C:\wamp64\www\happy-kid\src\eventBundle\Resources\views\planEvent" />
       <recent name="C:\wamp64\www\happy-kid\web" />
     </key>
@@ -107,9 +131,9 @@
       <command value=" php bin/console generate:doctrine:crud --overwrite" />
       <command value=" php bin/console generate:doctrine:crud" />
       <command value="s doctrine:generate:crud" />
-      <command value="c dump-autoload" />
-      <command value="s doctrine:schema:update --force" />
       <command value="s cache:clear" />
+      <command value="s doctrine:schema:update --force" />
+      <command value="c dump-autoload" />
       <command value="s server:run" />
     </option>
   </component>
@@ -139,7 +163,16 @@
       <workItem from="1581535662351" duration="27378000" />
       <workItem from="1582065959090" duration="3925000" />
       <workItem from="1582131513723" duration="32813000" />
-      <workItem from="1582168781799" duration="365000" />
+      <workItem from="1582168781799" duration="986000" />
+      <workItem from="1582189909385" duration="2895000" />
+      <workItem from="1582469551652" duration="1811000" />
+      <workItem from="1582572739541" duration="18102000" />
+      <workItem from="1582672173230" duration="9457000" />
+      <workItem from="1582730222902" duration="33252000" />
+      <workItem from="1582769263900" duration="37000" />
+      <workItem from="1582769326778" duration="45000" />
+      <workItem from="1582769384492" duration="31000" />
+      <workItem from="1582769436545" duration="8986000" />
     </task>
     <servers />
   </component>
@@ -151,10 +184,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="349" y="68" key="#CLI_Interpreters/0.0.1536.824@0.0.1536.824" timestamp="1582151725950" />
-    <state x="562" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1582163374477">
+    <state x="562" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1582735476769">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="562" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1582163374477" />
+    <state x="562" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1582735476769" />
     <state x="486" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581448551146">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -171,26 +204,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="493" y="292" key="ComposerCompositePathDialog/0.0.1536.824@0.0.1536.824" timestamp="1582153748350" />
-    <state x="548" y="155" key="FileChooserDialogImpl" timestamp="1582153542986">
+    <state x="548" y="155" key="FileChooserDialogImpl" timestamp="1582769398933">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="548" y="155" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582153542986" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1582168440944">
+    <state x="548" y="155" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582769398933" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1582781535482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582168440944" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1582168440944">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582781535482" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1582781535482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582168440944" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1582168440944">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582781535482" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1582781535482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582168440944" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1582168440944">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582781535482" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1582781535482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582168440944" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582781535482" />
     <state x="277" y="56" key="SettingsEditor" timestamp="1582153750125">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -203,13 +236,21 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="537" y="316" key="SymfonyPathDialog/0.0.1536.824@0.0.1536.824" timestamp="1582150934605" />
-    <state x="226" y="527" width="672" height="677" key="run.anything.popup" timestamp="1582168822597">
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1582769703394">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="226" y="527" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1582168822597" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1582159222931">
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1582769703394" />
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1582769385908">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1582159222931" />
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1582769385908" />
+    <state x="226" y="527" width="672" height="677" key="run.anything.popup" timestamp="1582779708585">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="226" y="527" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1582779708585" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1582766080758">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1582766080758" />
   </component>
 </project>

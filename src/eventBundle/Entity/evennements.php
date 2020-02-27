@@ -3,6 +3,7 @@
 namespace eventBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * evennements
@@ -24,6 +25,10 @@ class evennements
      * @var string
      *
      * @ORM\Column(name="sujet", type="string", length=255)
+     * @Assert\Regex(
+     *     pattern      ="/^[a-z]+$/i",
+     *     htmlPattern  ="^[a-zA-Z]+$",)
+     *
      */
     private $sujet;
 
@@ -38,6 +43,9 @@ class evennements
      * @var string
      *
      * @ORM\Column(name="lieu", type="string", length=255)
+     * @Assert\Regex(
+     *     pattern      ="/^[a-z]+$/i",
+     *     htmlPattern  ="^[a-zA-Z]+$",)
      */
     private $lieu;
     /**
@@ -64,6 +72,9 @@ class evennements
      * @var string
      *
      * @ORM\Column(name="description", type="string", length=255)
+     * @Assert\Regex(
+     *     pattern      ="/^[a-z]+$/i",
+     *     htmlPattern  ="^[a-zA-Z]+$",)
      */
 
     private $description;
@@ -72,8 +83,34 @@ class evennements
      * @var string
      *
      * @ORM\Column(name="titre", type="string", length=255)
+     * @Assert\Regex(
+     *     pattern      ="/^[a-z]+$/i",
+     *     htmlPattern  ="^[a-zA-Z]+$",)
      */
     private  $titre;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="rating", type="integer", nullable = true)
+     */
+    private  $rating;
+
+    /**
+     * @return int
+     */
+    public function getRating()
+    {
+        return $this->rating;
+    }
+
+    /**
+     * @param int $rating
+     */
+    public function setRating($rating)
+    {
+        $this->rating = $rating;
+    }
 
     /**
      * evennements constructor.

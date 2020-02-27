@@ -5,6 +5,8 @@ use Doctrine\ORM\Mapping as ORM;
 use eventBundle\eventBundle;
 use EventsBundle\Entity\Categorie;
 use EventsBundle\EventsBundle;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 
 /**
@@ -44,6 +46,9 @@ class PlanEvent
      * @var string
      *
      *@ORM\Column(name="titre", type="string", length=255)
+     *@Assert\Regex(
+     *     pattern      ="/^[a-z]+$/i",
+     *     htmlPattern  ="^[a-zA-Z]+$",)
      */
     private $titre;
 

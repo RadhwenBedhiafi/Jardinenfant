@@ -15,6 +15,7 @@
                             <th> Last Update </th>
                             <th> Tracking ID </th>
                             <th>Show Localisation</th>
+                            <th>Rating</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -29,14 +30,21 @@
                             <td> {{ event.date|date('Y-m-d')}} </td>
                             <td> {{ event.lieu }} </td>
                             <td><a href="{{ path('evenements_showgeo1', { 'id': event.id }) }}">show</a></td>
+                            <td>
+                                {{ event.rating|rating }}
+                            </td>
                         </tr>
+
                         {% endfor %}
                         </tbody>
                     </table>
+
                 </div>
             </div>
         </div>
+
         <a class="btn btn-success" href="{{ path('event_new') }}">create new event</a>
 
     </div>
+
 {% endblock %}

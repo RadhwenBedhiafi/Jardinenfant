@@ -8,6 +8,8 @@
     <title>{% block title %}{% endblock %}</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('dashboard/assets/vendors/mdi/css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+
     <link rel="stylesheet" href="{{ asset('dashboard/assets/vendors/css/vendor.bundle.base.css') }}">
    {% block css %}{% endblock %}
     <!-- endinject -->
@@ -472,6 +474,8 @@
 <!-- Custom js for this page -->
 <script src="{{ asset('dashboard/assets/js/dashboard.js') }}"></script>
 <script src="{{ asset('dashboard/assets/js/todolist.js') }}"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
 {% block javascript %}{% endblock %}
 </body>
 

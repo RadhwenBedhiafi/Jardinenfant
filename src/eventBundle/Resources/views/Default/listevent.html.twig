@@ -17,10 +17,9 @@
                     <p>
                        {{ e.description}}
                     </p>
-                    <div
-                            class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"
-                    >
-
+                    
+                    <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+                        <a href="{{ path('rating', {id : e.id}) }}">Rate</a>
                     </div>
                 </div>
             </div>

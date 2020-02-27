@@ -4,6 +4,9 @@ event_homepage:
 event_new:
     path:     /new
     defaults: { _controller: eventBundle:evennements:new }
+rating:
+    path:     /rating/{id}
+    defaults: { _controller: eventBundle:Default:rating }
 event_edit:
     path:     /edit/{id}
     defaults: { _controller: eventBundle:evennements:edit }
@@ -32,3 +35,7 @@ evenements_showgeo1:
     path: /showgeo/{id}
     defaults: { _controller: "eventBundle:evennements:geo" }
     methods:  [GET]
+notif:
+    path:     /
+
+    defaults: { _controller: "eventBundle:evennements:notif" }

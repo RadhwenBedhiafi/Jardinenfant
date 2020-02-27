@@ -1,0 +1,47 @@
+{% extends 'base_frontend.html.twig' %}
+
+
+{% block main %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
+
+ {{ form_start(f) }}
+    <table>
+        <tr>
+            <td> sujet</td>
+            <td>{{ form_widget(f.sujet) }}</td>
+        </tr>
+        <tr>
+            <td> Date</td>
+            <td>{{ form_widget(f.date) }}</td>
+        </tr>
+        <tr>
+
+            <td> Titre</td>
+            <td>{{ form_widget(f.lieu) }}</td>
+        </tr>
+        <tr>
+
+            <td> Titre</td>
+            <td>{{ form_widget(f.image) }}</td>
+        </tr>
+        <tr>
+
+            <td> Titre</td>
+            <td>{{ form_widget(f.description) }}</td>
+        </tr>
+        <tr>
+
+            <td> Titre</td>
+            <td>{{ form_widget(f.titre) }}</td>
+        </tr>
+        <tr>
+            <td> rating</td>
+            <td>{{ form_widget(f.rating) }}</td>
+        </tr>
+    </table>
+
+<input type="submit" value="Create" />
+
+{% endblock %}
